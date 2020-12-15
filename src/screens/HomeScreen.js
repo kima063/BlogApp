@@ -107,9 +107,9 @@ const HomeScreen = (props) => {
                                         created_at: firebase.firestore.Timestamp.now(),
                                         likes: [],
                                         comments: [],
-                                    }).then(() => {
+                                    }).then((docRef) => {
                                         setLoading(false);
-                                        alert("Post ID No. " + id +  " was created successfully!");
+                                        alert("Post ID No. " + docRef.id +  " was created successfully!");
                                     }).catch((error) => {
                                         setLoading(false);
                                         alert(error);
